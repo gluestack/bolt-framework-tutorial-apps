@@ -1,0 +1,6 @@
+container_name: web
+stateless: true
+service_runners:
+  local:
+    envfile: .env
+    build: npm install && npm run web
