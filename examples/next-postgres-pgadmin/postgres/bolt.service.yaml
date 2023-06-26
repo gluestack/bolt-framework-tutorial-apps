@@ -1,0 +1,10 @@
+container_name: postgres
+stateless: true
+service_runners:
+  docker:
+    envfile: .env
+    build: ./run.Dockerfile
+    ports:
+      - 5432:5432
+    volumes:
+      - ./postgres/init.db/:/docker-entrypoint-initdb.d/
