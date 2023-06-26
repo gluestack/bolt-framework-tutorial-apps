@@ -1,0 +1,9 @@
+envfile: .env.tpl
+project_id: "1687780932260"
+project_name: expo-app
+default_project_runner: host
+default_service_runner: local
+services:
+  web:
+    path: .
+ingress: null
