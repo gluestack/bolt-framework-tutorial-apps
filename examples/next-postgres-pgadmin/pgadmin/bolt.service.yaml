@@ -1,0 +1,8 @@
+container_name: pgadmin
+stateless: true
+service_runners:
+  docker:
+    envfile: .env
+    build: ./run.Dockerfile
+    ports:
+      - 8080:8080

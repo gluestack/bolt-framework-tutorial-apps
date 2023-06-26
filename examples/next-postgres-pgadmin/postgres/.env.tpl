@@ -1,0 +1,3 @@
+POSTGRES_DB=todoapp
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=password

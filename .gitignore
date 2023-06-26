@@ -1,0 +1,8 @@
+node_modules
+.logs
+.next
+.vscode
+.DS_Store
+.env
+.env.local
+package-lock.json

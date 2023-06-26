@@ -1,0 +1,27 @@
+envfile: .env.tpl
+project_id: "1687779995699"
+project_name: next-postgres-pgadmin
+default_project_runner: host
+default_service_runner: local
+services:
+  todonext:
+    path: todo-next
+  postgres:
+    path: postgres
+  pgadmin:
+    path: pgadmin
+ingress: 
+  - domain: nextjs.local.gluestack.io
+    port: 8000
+    options:
+      - location: /
+        rewrite_key: ^/(.*)
+        rewrite_value: /$1
+        proxy_pass: http://host.docker.internal:3000
+  - domain: admin.local.gluestack.io
+    port: 8001
+    options:
+      - location: /
+        rewrite_key: ^/(.*)
+        rewrite_value: /$1
+        proxy_pass: http://host.docker.internal:8080
