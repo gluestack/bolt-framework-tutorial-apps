@@ -1,0 +1,28 @@
+{
+  "name": "@gluestack-v2/bolt-framework-tutorial-apps",
+  "version": "0.0.1",
+  "description": "Tutorial Apps built using Gluestack & Bolt",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/gluestack-v2/tutorial-apps.git",
+    "directory": "examples"
+  },
+  "keywords": [
+    "gluestack",
+    "bolt",
+    "tutorials"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gluestack-v2/tutorial-apps/issues"
+  },
+  "homepage": "https://github.com/gluestack-v2/tutorial-apps#readme"
+}
