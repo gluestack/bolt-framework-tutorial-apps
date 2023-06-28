@@ -6,4 +6,6 @@
 
 - [Basic Expo App](https://github.com/gluestack/bolt-framework-tutorial-apps/tree/main/examples/expo-app#expo-web)
 
+- [Laravel App](https://github.com/gluestack/bolt-framework-tutorial-apps/tree/main/examples/laravel-app#laravel-app)
+
 - Todo App using NextJS, Postgres & PGAdmin
