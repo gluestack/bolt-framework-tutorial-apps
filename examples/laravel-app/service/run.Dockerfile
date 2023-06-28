@@ -33,7 +33,7 @@ RUN composer install --prefer-dist --no-dev --no-scripts --no-progress --no-sugg
 COPY . .
 
 # Expose the port
-EXPOSE 9000
+EXPOSE 8000
 
 # Start the server
 CMD ["php-fpm"]

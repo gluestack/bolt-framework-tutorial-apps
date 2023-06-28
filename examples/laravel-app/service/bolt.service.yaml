@@ -8,4 +8,4 @@ service_runners:
     envfile: .env
     build: ./run.Dockerfile
     ports:
-      - 9000:9000
+      - 8000:8000
