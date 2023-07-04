@@ -9,7 +9,7 @@ $ bolt up
 
 ## Configure Laravel Service
 
-```
+```bash
 # Goto laravel service directory
 $ cd examples/laravel-auth-mysql
 
