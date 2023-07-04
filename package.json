@@ -2,12 +2,12 @@
   "name": "@gluestack/bolt-framework-tutorial-apps",
   "version": "0.0.1",
   "description": "Tutorial Apps built using Gluestack & Bolt",
-  "main": "index.js",
   "directories": {
-    "example": "examples"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "simple-http-server": "examples/simple-http-server",
+    "next-postgres-pgadmin": "examples/next-postgres-pgadmin",
+    "expo-app": "examples/expo-app",
+    "laravel-app": "examples/laravel-app",
+    "laravel-auth-mysql": "examples/laravel-auth-mysql"
   },
   "repository": {
     "type": "git",
@@ -19,7 +19,7 @@
     "bolt",
     "tutorials"
   ],
-  "author": "",
+  "author": "gluestack.io",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/gluestack/tutorial-apps/issues"

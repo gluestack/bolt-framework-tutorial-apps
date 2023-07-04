@@ -19,7 +19,7 @@ $ bolt down
 ```bash
 $ cd examples/laravel
 # In watch mode
-$ bolt log --follow expo
+$ bolt log --follow laravel
 # Onetime logging
-$ bolt log expo
+$ bolt log laravel
 ```

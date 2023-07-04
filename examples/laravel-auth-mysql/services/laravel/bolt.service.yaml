@@ -1,0 +1,11 @@
+container_name: laravel
+stateless: true
+service_runners:
+  local:
+    envfile: .env
+    build: composer install && php artisan serve
+  docker:
+    envfile: .env
+    build: ./run.Dockerfile
+    ports:
+      - 8000:8000

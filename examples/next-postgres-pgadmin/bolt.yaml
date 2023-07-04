@@ -10,15 +10,15 @@ services:
     path: postgres
   pgadmin:
     path: pgadmin
-ingress: 
-  - domain: nextjs.local.gluestack.io
+ingress:
+  - domain: nextjs.local.gluestack.app
     port: 8000
     options:
       - location: /
         rewrite_key: ^/(.*)
         rewrite_value: /$1
         proxy_pass: http://host.docker.internal:3000
-  - domain: admin.local.gluestack.io
+  - domain: admin.local.gluestack.app
     port: 8001
     options:
       - location: /

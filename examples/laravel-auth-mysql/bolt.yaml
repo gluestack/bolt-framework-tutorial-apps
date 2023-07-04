@@ -1,0 +1,11 @@
+envfile: .env.tpl
+project_id: "1687940133023"
+project_name: laravelmysql
+default_project_runner: host
+default_service_runner: local
+services:
+  laravel:
+    path: services/laravel
+  mysql:
+    path: services/mysql
+ingress: null

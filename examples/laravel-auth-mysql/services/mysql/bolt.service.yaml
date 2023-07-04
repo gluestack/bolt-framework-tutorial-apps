@@ -1,0 +1,10 @@
+container_name: mysql
+stateless: false
+service_runners:
+  docker:
+    envfile: .env
+    build: ./run.Dockerfile
+    volumes:
+      - ./services/mysql/data:/var/lib/mysql
+    ports:
+      - 3306:3306
