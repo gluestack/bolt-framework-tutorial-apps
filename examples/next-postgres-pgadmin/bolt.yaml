@@ -1,8 +1,6 @@
 envfile: .env.tpl
 project_id: "1687779995699"
 project_name: next-postgres-pgadmin
-default_project_runner: host
-default_service_runner: local
 services:
   todonext:
     path: todo-next

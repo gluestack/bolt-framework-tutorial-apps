@@ -1,5 +1,8 @@
 container_name: web
 stateless: true
+default_service_runner: local
+supported_service_runners:
+  - local
 service_runners:
   local:
     envfile: .env

@@ -1,8 +1,6 @@
 envfile: .env.tpl
 project_id: "1687868543060"
 project_name: simpleserver
-default_project_runner: host
-default_service_runner: local
 services:
   myapp:
     path: service-one
