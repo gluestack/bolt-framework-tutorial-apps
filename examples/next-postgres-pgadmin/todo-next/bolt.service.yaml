@@ -1,13 +1,17 @@
 container_name: todonext
 stateless: true
-default_service_runner: local
+default_service_runner: vmlocal
 supported_service_runners:
   - local
-  - docker
+  - docker  
+  - vmlocal
+  - vmdocker
 service_runners:
   local:
     envfile: .env
     build: npm install && npm run dev
+    ports:
+      - 3000:3000
   docker:
     envfile: .env
     build: ./run.Dockerfile

@@ -1,8 +1,9 @@
 container_name: pgadmin
 stateless: true
-default_service_runner: docker
+default_service_runner: vmdocker
 supported_service_runners:
   - docker
+  - vmdocker
 service_runners:
   docker:
     envfile: .env
