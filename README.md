@@ -9,3 +9,5 @@
 - [Laravel App](https://github.com/gluestack/bolt-framework-tutorial-apps/tree/main/examples/laravel-app#laravel-app)
 
 - [Laravel Auth & MySQL](https://github.com/gluestack/bolt-framework-tutorial-apps/tree/main/examples/laravel-auth-mysql#laravel-auth-mysql)
+
+- [Expo & Express APIs](https://github.com/gluestack/bolt-framework-tutorial-apps/tree/main/examples/laravel-auth-mysql#expo-express-apis)

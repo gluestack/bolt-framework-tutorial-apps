@@ -1,0 +1,9 @@
+envfile: .env.tpl
+project_id: "1687780932260"
+project_name: expo-app
+services:
+  expo:
+    path: services/expo
+  apis:
+    path: services/apis
+ingress: null

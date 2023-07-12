@@ -1,0 +1,9 @@
+container_name: expo
+stateless: true
+default_service_runner: local
+supported_service_runners:
+  - local
+service_runners:
+  local:
+    envfile: .env
+    build: npm install && npm run web

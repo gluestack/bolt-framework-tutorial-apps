@@ -1,0 +1,12 @@
+container_name: apis
+stateless: true
+default_service_runner: vmlocal
+supported_service_runners:
+  - vmlocal
+  - local
+service_runners:
+  local:
+    envfile: .env
+    build: npm install && npm run start
+    ports:
+      - 3000:3000
