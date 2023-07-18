@@ -12,9 +12,9 @@ service_runners:
       - 4002:4002
   docker:
     envfile: .env
-    build: ./run.Dockerfile
+    build: ./Dockerfile
     ports:
       - 4002:4002
     volumes:
-      - :/app
-      - /app/todo-two/node_modules/
+      - ./services/todo-two:/app/todo-two
+      - /app/todo-two/node_modules

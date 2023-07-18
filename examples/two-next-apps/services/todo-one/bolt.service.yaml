@@ -12,9 +12,9 @@ service_runners:
       - 4001:4001
   docker:
     envfile: .env
-    build: ./run.Dockerfile
+    build: ./Dockerfile
     ports:
       - 4001:4001
     volumes:
-      - :/app
-      - /app/todo-one/node_modules/
+      - ./services/todo-one:/app/todo-one
+      - /app/todo-one/node_modules
