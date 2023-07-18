@@ -1,0 +1,20 @@
+container_name: todoone
+stateless: true
+default_service_runner: docker
+supported_service_runners:
+  - local
+  - docker
+service_runners:
+  local:
+    envfile: .env
+    build: npm install && npm run dev
+    ports:
+      - 4001:4001
+  docker:
+    envfile: .env
+    build: ./run.Dockerfile
+    ports:
+      - 4001:4001
+    volumes:
+      - :/app
+      - /app/todo-one/node_modules/
