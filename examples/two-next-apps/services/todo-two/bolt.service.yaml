@@ -1,0 +1,20 @@
+container_name: todotwo
+stateless: true
+default_service_runner: docker
+supported_service_runners:
+  - local
+  - docker
+service_runners:
+  local:
+    envfile: .env
+    build: npm install && npm run dev
+    ports:
+      - 4002:4002
+  docker:
+    envfile: .env
+    build: ./Dockerfile
+    ports:
+      - 4002:4002
+    volumes:
+      - ./services/todo-two:/app/todo-two
+      - /app/todo-two/node_modules

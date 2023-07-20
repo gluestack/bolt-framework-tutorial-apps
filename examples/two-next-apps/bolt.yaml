@@ -1,0 +1,9 @@
+envfile: .env.tpl
+project_id: "1689657879944"
+project_name: two-next-apps
+services:
+  todoone:
+    path: ./services/todo-one
+  todotwo:
+    path: ./services/todo-two
+ingress: null
