@@ -4,4 +4,11 @@ project_name: simpleserver
 services:
   myapp:
     path: service-one
-ingress: null
+ingress:
+  - domain: simple-http-server.local.gluestack.app
+    port: 80
+    options:
+      - location: /
+        rewrite_key: ^/(.*)
+        rewrite_value: /$1
+        proxy_pass: http://localhost:9000
