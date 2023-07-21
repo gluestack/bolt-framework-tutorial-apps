@@ -2,7 +2,7 @@
 
 - [Simple HTTP Server](https://github.com/gluestack/bolt-framework-tutorial-apps/tree/main/examples/simple-http-server#simple-http-server)
 
-- [Two Next Apps & Ways to use ENV variables in Bolt Service & Bolt Ingress](https://github.com/gluestack/bolt-framework-tutorial-apps/tree/main/examples/two-next-apps)
+- [Two Next Apps & Ways to use ENV variables in Bolt Service & Bolt Ingress](https://github.com/gluestack/bolt-framework-tutorial-apps/tree/main/examples/two-next-apps#two-next-apps--ways-to-use-env-variables-in-bolt-service--bolt-ingress)
 
 - [Simple NextJS app with Postgres & PGAdmin](https://github.com/gluestack/bolt-framework-tutorial-apps/tree/main/examples/next-postgres-pgadmin)
 
