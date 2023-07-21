@@ -9,12 +9,12 @@ service_runners:
     envfile: .env
     build: npm install && npm run dev
     ports:
-      - 4001:4001
+      - ${APP_PORT}:4001
   docker:
     envfile: .env
-    build: ./Dockerfile
+    build: ./run.Dockerfile
     ports:
-      - 4001:4001
+      - ${APP_PORT}:4001
     volumes:
       - ./services/todo-one:/app/todo-one
       - /app/todo-one/node_modules

@@ -7,14 +7,14 @@ supported_service_runners:
 service_runners:
   local:
     envfile: .env
-    build: npm install && npm run dev
+    build: ${LOCAL_BUILD_COMMAND}
     ports:
-      - 4002:4002
+      - ${APP_PORT}:4002
   docker:
     envfile: .env
-    build: ./Dockerfile
+    build: ${DOCKER_BUILD_FILEPATH}
     ports:
-      - 4002:4002
+      - ${APP_PORT}:4002
     volumes:
       - ./services/todo-two:/app/todo-two
       - /app/todo-two/node_modules

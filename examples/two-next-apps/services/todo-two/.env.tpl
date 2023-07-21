@@ -1,0 +1,5 @@
+APP_NAME=%TODOONE_APP_NAME_TWO%
+APP_PORT=4002
+BACKEND_URL="http://localhost:%TODOONE_APP_PORT%"
+BUILD_FILEPATH="./run.Dockerfile"
+DOCKER_BUILD_COMMAND="npm install && npm run dev"

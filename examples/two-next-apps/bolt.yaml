@@ -8,16 +8,16 @@ services:
     path: ./services/todo-two
 ingress:
   - domain: todo-one.local.gluestack.app
-    port: 4001
+    port: 8001
     options:
       - location: /
         rewrite_key: ^/(.*)
         rewrite_value: /$1
-        proxy_pass: http://localhost:4001
+        proxy_pass: http://localhost:${TODOONE_APP_PORT}
   - domain: todo-two.local.gluestack.app
-    port: 4002
+    port: 8002
     options:
       - location: /
         rewrite_key: ^/(.*)
         rewrite_value: /$1
-        proxy_pass: http://localhost:4002
+        proxy_pass: http://localhost:${TODOTWO_APP_PORT}
