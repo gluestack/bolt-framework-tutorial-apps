@@ -7,9 +7,9 @@ services:
   postgres:
     path: services/postgres
   todofe:
-    path: services/TodoApp
+    path: services/webui
   todobackend:
-    path: services/todo-backend
+    path: services/backend
 ingress:
   - domain: bolttodo.local.gluestack.app
     port: 8000
