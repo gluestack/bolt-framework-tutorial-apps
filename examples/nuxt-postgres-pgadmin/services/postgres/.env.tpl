@@ -1,0 +1,3 @@
+POSTGRES_DB=todo_nuxt
+POSTGRES_USER=user1
+POSTGRES_PASSWORD=password

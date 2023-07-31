@@ -1,0 +1,15 @@
+container_name: todonuxt
+stateless: true
+default_service_runner: docker
+supported_service_runners:
+  - local
+  - docker
+service_runners:
+  local:
+    envfile: .env
+    build: npm run build && npm run start
+  docker:
+    envfile: .env
+    build: ./run.Dockerfile
+    ports:
+      - 3000:3000
