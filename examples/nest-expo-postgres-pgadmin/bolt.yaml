@@ -1,0 +1,41 @@
+envfile: .env.tpl
+project_id: "1689666445326"
+project_name: nest-expo-postgres-pgadmin
+services:
+  pgadmin:
+    path: services/pgadmin
+  postgres:
+    path: services/postgres
+  todofe:
+    path: services/TodoApp
+  todobackend:
+    path: services/todo-backend
+ingress:
+  - domain: bolttodo.local.gluestack.app
+    port: 8000
+    options:
+      - location: /
+        rewrite_key: ^/(.*)
+        rewrite_value: /$1
+        proxy_pass: http://host.docker.internal:3000
+  - domain: bolttodo-pgadmin.local.gluestack.app
+    port: 8001
+    options:
+      - location: /
+        rewrite_key: ^/(.*)
+        rewrite_value: /$1
+        proxy_pass: http://host.docker.internal:8080
+  - domain: bolttodo-postgres.local.gluestack.app
+    port: 8002
+    options:
+      - location: /
+        rewrite_key: ^/(.*)
+        rewrite_value: /$1
+        proxy_pass: http://host.docker.internal:5432
+  - domain: bolt-expo.local.gluestack.app
+    port: 8003
+    options:
+      - location: /
+        rewrite_key: ^/(.*)
+        rewrite_value: /$1
+        proxy_pass: http://host.docker.internal:19006
