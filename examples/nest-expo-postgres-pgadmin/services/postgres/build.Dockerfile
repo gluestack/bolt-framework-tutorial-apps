@@ -1,5 +1,5 @@
-# Use the official PostgreSQL Docker image as the base image
-FROM postgres:latest
+# Use the official PostgreSQL image as the base image
+FROM postgres:12
 
 # Set the working directory to /app
 WORKDIR /app
@@ -7,8 +7,5 @@ WORKDIR /app
 # Create a volume to persist the database data
 VOLUME /var/lib/postgresql/data
 
-# Expose the default PostgreSQL port
+# Expose the PostgreSQL port
 EXPOSE 5432
-
-# Start the PostgreSQL service
-CMD ["postgres"]

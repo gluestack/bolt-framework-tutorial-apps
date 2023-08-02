@@ -1,6 +1,11 @@
 container_name: todofe
 stateless: true
 default_service_runner: local
+depends_on:
+  - todobe
+service_discovery_offset: 
+  - 19000
+  - 19006
 supported_service_runners:
   - local
   - docker
@@ -8,8 +13,12 @@ service_runners:
   local:
     envfile: .env
     build: npm install && npm run web
+    ports:
+      - ${ASSIGNED_PORT}:${ASSIGNED_PORT}
+      - ${ASSIGNED_PORT_1}:${ASSIGNED_PORT_1}
   docker:
     envfile: .env
     build: ./run.Dockerfile
     ports:
-      - 3000:3000
+      - ${ASSIGNED_PORT}:19000
+      - ${ASSIGNED_PORT_1}:19006
