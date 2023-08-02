@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . .
 
 # Install dependencies
-RUN npm install 
+RUN npm run install --workspaces --if-present
 
 # Expose the port
 EXPOSE 3000

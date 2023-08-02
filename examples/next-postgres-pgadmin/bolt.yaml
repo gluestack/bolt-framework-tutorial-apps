@@ -1,5 +1,5 @@
 envfile: .env.tpl
-project_id: "1687779995699"
+project_id: "1690964884913"
 project_name: next-postgres-pgadmin
 services:
   todonext:
@@ -23,3 +23,5 @@ ingress:
         rewrite_key: ^/(.*)
         rewrite_value: /$1
         proxy_pass: http://host.docker.internal:8080
+vm:
+  name: nextpostgrespgadmin

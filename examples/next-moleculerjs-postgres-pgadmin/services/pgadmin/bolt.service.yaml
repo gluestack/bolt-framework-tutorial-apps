@@ -1,12 +1,19 @@
 container_name: pgadmin
 stateless: true
 default_service_runner: docker
+service_discovery_offset: 
+  - 8080
 supported_service_runners:
+  - local
   - docker
-  - vmdocker
 service_runners:
+  local:
+    envfile: .env
+    build: npm run install --workspaces --if-present && npm run dev
+    ports:
+      - ${ASSIGNED_PORT}:${ASSIGNED_PORT}
   docker:
     envfile: .env
     build: ./run.Dockerfile
     ports:
-      - 8080:8080
+      - ${ASSIGNED_PORT}:8080
