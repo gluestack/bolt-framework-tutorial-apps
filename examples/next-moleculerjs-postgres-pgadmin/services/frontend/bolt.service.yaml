@@ -1,0 +1,18 @@
+container_name: frontend
+stateless: true
+default_service_runner: local
+supported_service_runners:
+  - local
+  - docker
+service_runners:
+  local:
+    envfile: .env
+    build: npm install && npm run dev
+  docker:
+    envfile: .env
+    build: ./run.Dockerfile
+    ports:
+      - 3001:3000
+    volumes:
+      - :/app
+      - /app/frontend/node_modules/

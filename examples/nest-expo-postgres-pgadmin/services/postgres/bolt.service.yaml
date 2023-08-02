@@ -9,14 +9,6 @@ service_runners:
   docker:
     envfile: .env
     build: ./run.Dockerfile
-    healthcheck:
-      test:
-        - CMD-SHELL
-        - psql -U $$POSTGRES_USER -d $$POSTGRES_DB
-      interval: 10s
-      timeout: 10s
-      retries: 50
-      start_period: 30s
     ports:
       - ${ASSIGNED_PORT}:5432
     volumes:
