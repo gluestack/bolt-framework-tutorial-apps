@@ -1,7 +1,9 @@
 envfile: .env.tpl
-project_id: "1687940133023"
-project_name: laravel
+project_id: "1690964916850"
+project_name: laravel-app
 services:
-  myapp:
+  laravelservice:
     path: service
 ingress: null
+vm:
+  name: laravelapp

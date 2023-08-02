@@ -13,8 +13,8 @@ RUN npm install
 # Copy the rest of the application to the container
 COPY . .
 
-# Expose port 3000 for development server
-EXPOSE 19000 19006
+# Expose port 9000 for development server
+EXPOSE 9000
 
 # Start the development server
-CMD ["npm", "run","web"]
+CMD ["npm", "start"]

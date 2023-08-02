@@ -1,5 +1,5 @@
 envfile: .env.tpl
-project_id: "1687780932260"
+project_id: "1690963931562"
 project_name: expo-express-apis
 services:
   expo:
@@ -7,3 +7,5 @@ services:
   apis:
     path: services/apis
 ingress: null
+vm:
+  name: expoexpressapis
