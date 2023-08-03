@@ -3,5 +3,4 @@ FROM dpage/pgadmin4:latest
 
 
 # Expose the default pgAdmin port
-EXPOSE 80
-
+EXPOSE 8080

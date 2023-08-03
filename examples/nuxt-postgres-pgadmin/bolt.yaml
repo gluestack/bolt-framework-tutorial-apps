@@ -1,13 +1,30 @@
 envfile: .env.tpl
-project_id: "1690172229386"
+project_id: "1690889769159"
 project_name: nuxt-postgres-pgadmin
 services:
   pgadmin:
-    path: ./services/pgadmin
-  todonuxt:
-    path: ./services/todo_nuxt
+    path: services/pgadmin
   postgres:
-    path: ./services/postgres
-ingress: null
+    path: services/postgres
+  todonuxt:
+    path: services/todo_nuxt
 vm:
   name: nuxt-postgres-pgadmin
+ingress:
+  - domain: todo-nuxt.local.gluestack.app
+    port: 8000
+    options:
+      - location: /
+        rewrite_key: ^/(.*)
+        rewrite_value: /$1
+        proxy_pass: http://${TODONUXT_ASSIGNED_HOST}:${TODONUXT_ASSIGNED_PORT}
+  - domain: todo-pgadmin.local.gluestack.app
+    port: 8001
+    options:
+      - location: /
+        rewrite_key: ^/(.*)
+        rewrite_value: /$1
+        proxy_pass: http://${PGADMIN_ASSIGNED_HOST}:${PGADMIN_ASSIGNED_PORT}
+  
+    
+  
