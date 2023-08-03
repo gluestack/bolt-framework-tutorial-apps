@@ -1,9 +1,11 @@
 envfile: .env.tpl
-project_id: "1687868543060"
-project_name: simpleserver
+project_id: "1690960686634"
+project_name: simple-http-server
 services:
   myapp:
     path: service-one
+vm:
+  name: simplehttpserver
 ingress:
   - domain: simple-http-server.local.gluestack.app
     port: 80
@@ -11,4 +13,5 @@ ingress:
       - location: /
         rewrite_key: ^/(.*)
         rewrite_value: /$1
-        proxy_pass: http://localhost:9000
+        proxy_pass: http://${MYAPP_ASSIGNED_HOST}:${MYAPP_ASSIGNED_PORT}
+

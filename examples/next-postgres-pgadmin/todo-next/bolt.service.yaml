@@ -1,22 +1,22 @@
 container_name: todonext
 stateless: true
-default_service_runner: vmlocal
+default_service_runner: local
+service_discovery_offset: 
+  - 3000
 supported_service_runners:
   - local
-  - docker  
-  - vmlocal
-  - vmdocker
+  - docker
 service_runners:
   local:
     envfile: .env
-    build: npm install && npm run dev
+    build: npm install && npm run dev -- --port ${ASSIGNED_PORT}
     ports:
-      - 3000:3000
+      - ${ASSIGNED_PORT}:${ASSIGNED_PORT}
   docker:
     envfile: .env
     build: ./run.Dockerfile
     ports:
-      - 3000:3000
+      - ${ASSIGNED_PORT}:3000
     volumes:
       - :/app
       - /app/todo-next/node_modules/

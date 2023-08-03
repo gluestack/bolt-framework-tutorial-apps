@@ -1,15 +1,22 @@
 container_name: todonuxt
 stateless: true
 default_service_runner: docker
+depends_on:
+  - postgres
+service_discovery_offset: 
+  - 3000
 supported_service_runners:
   - local
   - docker
 service_runners:
   local:
     envfile: .env
-    build: npm run build && npm run start
+    build: npm install && npm run dev -- --port ${ASSIGNED_PORT}
+    ports:
+      - ${ASSIGNED_PORT}:${ASSIGNED_PORT}
   docker:
     envfile: .env
     build: ./run.Dockerfile
     ports:
-      - 3000:3000
+      - ${ASSIGNED_PORT}:3000
+  

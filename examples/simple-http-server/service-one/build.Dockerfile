@@ -13,7 +13,7 @@ RUN npm install --production
 # Copy the rest of the application to the container
 COPY . .
 
-# Expose port 9000 for the application
+# Expose port 3000 for the application
 EXPOSE 9000
 
 # Start the application

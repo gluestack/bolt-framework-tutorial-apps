@@ -1,22 +1,22 @@
 container_name: myapp
 stateless: true
-default_service_runner: local
+default_service_runner: docker
+service_discovery_offset: 
+  - 9000
 supported_service_runners:
   - local
   - docker
-  - vmlocal
-  - vmdocker
 service_runners:
   local:
     envfile: .env
-    build: npm install && npm run start
+    build: npm install && node app.js
     ports:
-      - 9000:9000
+      - ${ASSIGNED_PORT}:${ASSIGNED_PORT}
   docker:
     envfile: .env
     build: ./run.Dockerfile
     ports:
-      - 9000:9000
+      - ${ASSIGNED_PORT}:${ASSIGNED_PORT}
     volumes:
       - service-one:/app
       - /app/node_modules
