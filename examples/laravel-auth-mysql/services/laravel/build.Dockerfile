@@ -39,7 +39,7 @@ RUN php artisan config:cache && \
     php artisan optimize
 
 # Expose the port
-EXPOSE 9000
+EXPOSE 8000
 
 # Start the server
 CMD ["php-fpm"]

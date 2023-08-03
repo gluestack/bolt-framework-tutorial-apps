@@ -1,9 +1,11 @@
 envfile: .env.tpl
-project_id: "1687940133023"
-project_name: laravelmysql
+project_id: "1690972020931"
+project_name: laravel-auth-mysql
 services:
-  laravel:
+  laravelservice:
     path: services/laravel
-  mysql:
+  sql:
     path: services/mysql
 ingress: null
+vm:
+  name: laravelauthmysql

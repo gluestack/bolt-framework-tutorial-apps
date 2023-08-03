@@ -1,6 +1,8 @@
-container_name: mysql
-stateless: false
+container_name: sql
+stateless: true
 default_service_runner: docker
+service_discovery_offset: 
+  - 3306
 supported_service_runners:
   - docker
 service_runners:
@@ -10,4 +12,4 @@ service_runners:
     volumes:
       - ./services/mysql/data:/var/lib/mysql
     ports:
-      - 3306:3306
+      - ${ASSIGNED_PORT}:3306

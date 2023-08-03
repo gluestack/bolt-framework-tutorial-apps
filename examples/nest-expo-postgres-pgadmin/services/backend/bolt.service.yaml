@@ -1,6 +1,10 @@
-container_name: todobackend
+container_name: todobe
 stateless: true
 default_service_runner: docker
+depends_on:
+  - postgres
+service_discovery_offset: 
+  - 3000
 supported_service_runners:
   - local
   - docker
@@ -8,8 +12,10 @@ service_runners:
   local:
     envfile: .env
     build: npm install && npm run start:dev
+    ports:
+      - ${ASSIGNED_PORT}:${ASSIGNED_PORT}
   docker:
     envfile: .env
     build: ./run.Dockerfile
     ports:
-      - 3000:3000
+      - ${ASSIGNED_PORT}:${ASSIGNED_PORT}

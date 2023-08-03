@@ -13,11 +13,8 @@ RUN npm install --production
 # Copy the rest of the application to the container
 COPY . .
 
-# Build the application
-RUN npm run build
-
-# Expose port 80 for the application
-EXPOSE 80
+# Expose port 3000 for the application
+EXPOSE 3000
 
 # Start the application
 CMD ["npm", "run", "start"]

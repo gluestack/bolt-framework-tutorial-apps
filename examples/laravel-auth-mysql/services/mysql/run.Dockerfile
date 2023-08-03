@@ -4,6 +4,8 @@ FROM mysql:latest
 # Set the working directory to /app
 WORKDIR /app
 
+COPY ./conf/ /etc/mysql/conf.d/
+
 # Create a volume for the MySQL data directory
 VOLUME /var/lib/mysql
 
@@ -11,4 +13,4 @@ VOLUME /var/lib/mysql
 EXPOSE 3306
 
 # Start the MySQL server
-CMD ["mysqld", "--default-authentication-plugin=mysql_native_password"]
+CMD ["mysqld"]

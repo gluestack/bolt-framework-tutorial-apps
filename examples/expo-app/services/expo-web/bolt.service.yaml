@@ -1,8 +1,6 @@
-container_name: todofe
+container_name: expoweb
 stateless: true
 default_service_runner: local
-depends_on:
-  - todobe
 service_discovery_offset: 
   - 19000
   - 19006
