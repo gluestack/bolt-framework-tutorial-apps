@@ -8,7 +8,7 @@ vm:
   name: simplehttpserver
 ingress:
   - domain: simple-http-server.local.gluestack.app
-    port: 80
+    port: 8000
     options:
       - location: /
         rewrite_key: ^/(.*)
