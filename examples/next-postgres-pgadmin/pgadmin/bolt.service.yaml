@@ -3,6 +3,8 @@ stateless: true
 default_service_runner: docker
 service_discovery_offset: 
   - 8080
+depends_on:
+  - postgres
 supported_service_runners:
   - docker
 service_runners:

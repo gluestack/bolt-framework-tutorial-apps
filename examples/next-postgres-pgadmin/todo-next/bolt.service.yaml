@@ -3,6 +3,8 @@ stateless: true
 default_service_runner: local
 service_discovery_offset: 
   - 3000
+depends_on:
+  - postgres 
 supported_service_runners:
   - local
   - docker
