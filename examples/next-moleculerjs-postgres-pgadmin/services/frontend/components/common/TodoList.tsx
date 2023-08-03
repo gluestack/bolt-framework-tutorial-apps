@@ -28,7 +28,7 @@ const TodoList = () => {
   const fetchTodos = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8000/api/todo/getAllTodos"
+        `${process.env.NEXT_PUBLIC_BACKENDURL}/api/todo/getAllTodos`
       );
       setTodos(response.data);
       return response.data;
@@ -40,7 +40,7 @@ const TodoList = () => {
   const addTodo = async () => {
     if (newTodo) {
       try {
-        await axios.post("http://localhost:8000/api/todo/createTodo", {
+        await axios.post(`${process.env.NEXT_PUBLIC_BACKENDURL}/api/todo/createTodo`, {
           title: newTodo,
         });
         setNewTodo("");
@@ -53,7 +53,7 @@ const TodoList = () => {
 
   const deleteTodo = async (id: string) => {
     try {
-      await axios.delete(`http://localhost:8000/api/todo/deleteTodo/${id}`);
+      await axios.delete(`${process.env.NEXT_PUBLIC_BACKENDURL}/api/todo/deleteTodo/${id}`);
       setTodos((prevTodos) => prevTodos.filter((todo: Todo) => todo.id !== id));
     } catch (error) {
       console.error("Error deleting todo:", error);
@@ -68,7 +68,7 @@ const TodoList = () => {
     if (selectedTodo) {
       try {
         await axios.put(
-          `http://localhost:8000/api/todo/updateTodo/${selectedTodo?.id}`,
+          `${process.env.NEXT_PUBLIC_BACKENDURL}/api/todo/updateTodo/${selectedTodo?.id}`,
           {
             title: selectedTodo?.title,
             iscompleted: selectedTodo?.iscompleted,
@@ -97,7 +97,7 @@ const TodoList = () => {
 
       try {
         await axios.put(
-          `http://localhost:8000/api/todo/updateTodo/${id}`,
+          `${process.env.NEXT_PUBLIC_BACKENDURL}/api/todo/updateTodo/${id}`,
           updatedTodo
         );
         setTodos((prevTodos) =>

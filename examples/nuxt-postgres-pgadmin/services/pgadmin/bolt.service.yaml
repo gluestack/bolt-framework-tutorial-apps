@@ -3,7 +3,6 @@ stateless: true
 default_service_runner: docker
 depends_on:
   - postgres
-  - todonuxt
 service_discovery_offset: 
   - 8080
 supported_service_runners:

@@ -15,13 +15,13 @@ ingress:
       - location: /
         rewrite_key: ^/(.*)
         rewrite_value: /$1
-        proxy_pass: http://host.docker.internal:3000
+        proxy_pass: http://${TODONEXT_ASSIGNED_HOST}:${TODONEXT_ASSIGNED_PORT}
   - domain: admin.local.gluestack.app
     port: 8001
     options:
       - location: /
         rewrite_key: ^/(.*)
         rewrite_value: /$1
-        proxy_pass: http://host.docker.internal:8080
+        proxy_pass: http://${PGADMIN_ASSIGNED_HOST}:${PGADMIN_ASSIGNED_PORT}
 vm:
   name: nextpostgrespgadmin

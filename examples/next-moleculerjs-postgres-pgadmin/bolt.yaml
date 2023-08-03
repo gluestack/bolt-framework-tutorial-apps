@@ -11,26 +11,26 @@ services:
   pgadmin:
     path: services/pgadmin
 ingress:
-  - domain: bolttodo.backend.app.com
+  - domain: bolt.frontend.app.com
     port: 8000
     options:
       - location: /
         rewrite_key: ^/(.*)
         rewrite_value: /$1
-        proxy_pass: http://host.docker.internal:3000
-  - domain: bolt.pgadmin.app.com
+        proxy_pass: http://${FRONTEND_ASSIGNED_HOST}:${FRONTEND_ASSIGNED_PORT}
+  - domain: bolt.backend.app.com
     port: 8001
     options:
       - location: /
         rewrite_key: ^/(.*)
         rewrite_value: /$1
-        proxy_pass: http://host.docker.internal:8080
-  - domain: bolt.postgres.app.com
+        proxy_pass: http://${BACKEND_ASSIGNED_HOST}:${BACKEND_ASSIGNED_PORT}
+  - domain: bolt.pgadmin.app.com
     port: 8002
     options:
       - location: /
         rewrite_key: ^/(.*)
         rewrite_value: /$1
-        proxy_pass: http://host.docker.internal:5432
+        proxy_pass: http://${PGADMIN_ASSIGNED_HOST}:${PGADMIN_ASSIGNED_PORT}
 vm:
   name: nextmoleculerjspostgrespgadmin
