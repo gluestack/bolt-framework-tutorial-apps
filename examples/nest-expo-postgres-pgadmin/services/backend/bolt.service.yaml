@@ -18,4 +18,4 @@ service_runners:
     envfile: .env
     build: ./run.Dockerfile
     ports:
-      - ${ASSIGNED_PORT}:3000
+      - ${ASSIGNED_PORT}:${ASSIGNED_PORT}
